@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Fluency </title>
+</head>
+<body>
+
+<h1>JavaScript Fluency</h1>
+<h2>This page will demonstrate my JavaScript fluency.</h2>
+<h3 id = "test"></h3>
+
+<script>
+document.getElementById("test").innerHTML = "I am using JavaScript to display this";
+</script>
+
+<button type="button"
+onclick="document.getElementById('time').innerHTML = Date()">
+Click me to display Date and Time.</button>
+<p id="time"></p>
+
+<h2>Do you get tired of counting, well have JavaScript do it using a while loop!</h2>
+<p id="while"></p>
+
+<script>
+var text = "";
+var i = 1;
+while (i <= 5) {
+  text += "<br>The number you wish to see is: " + i;
+  i++;
+}
+document.getElementById("while").innerHTML = text;
+</script>
+
+<h2>Even use while loops to go through arrays of many cars!</h2>
+<p id="arrays"></p>
+<script>
+var cars = ["Honda", "Toyota", "Subaru", "Ford", "Dodge"];
+var i = 0;
+var text = "";
+while (cars[i]) {
+  text += cars[i] + "<br>";
+  i++;
+}
+document.getElementById("arrays").innerHTML = text;
+</script>
+
+<h2> Click this button to be greeted depending on the time using an if, else if, and else statement!</h2>
+<button onclick="myFunction()">Try it</button>
+<p id="greeting"></p>
+<script>
+function myFunction() {
+  var greeting;
+  var time = new Date().getHours();
+  if (time < 10) {
+    greeting = "Good morning sunshine";
+  } else if (time < 20) {
+    greeting = "I said Good day";
+  } else {
+    greeting = "Good evening";
+  }
+  document.getElementById("greeting").innerHTML = greeting;
+}
+</script>
+
+</body>
+</html>
