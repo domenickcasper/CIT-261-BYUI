@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Transitions</title>
+    <style>
+        h1 {
+            color: black;
+            font-size: 40px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        h2 {
+            color: darkblue;
+            font-size: 36px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background: coral;
+            transition: width 2s, height 4s;
+        }
+        
+        #div1:hover {
+            width: 400px;
+            height: 400px;
+        }
+
+        #div2 {
+            width: 200px;
+            height: 200px;
+			background: blue;
+            position: relative;
+            animation-name: animationFun;
+            animation-duration: 8s;
+        }
+
+        @keyframes animationFun {
+			0%   {background-color: red; left: 0px; }
+			25%  {background-color: orange; left: 300px; }
+			50%  {background-color: yellow; left: 600px; }
+            75%  {background-color: green; left: 300px; }
+			100% {background-color: blue; left: 0px; }
+        }
+
+        #div3 {
+            position: relative;
+            height: 200px;
+            width: 200px;
+            margin: 100px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        #div4 {
+            font-size: 23px;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 50px;
+            position: absolute;
+            border: 1px solid black;
+            background-color: red; 
+            transform: rotateY(60deg);
+            transform-style: preserve-3d;
+            transform-origin: 20% 40%;
+        }
+
+        #div5 {
+            font-size: 26px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            padding: 40px;
+            position: absolute;
+            border: 1px solid black;
+            background-color: yellow;
+            transform: rotateY(60deg);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>CSS3 Transitions, Animations, and Transformations!</h1>
+    <h2>This is what a CSS3 Transition looks like!</h2>
+    <div id = "div1"></div>
+
+    <h2>Do you like color as much as I do? This is a Animation!</h2>
+    <div id = "div2"></div>
+
+    <h2>So now you can see the fun in these! Now look at what Transform can do!</h2>
+    <div id = "div3">
+        <div id = "div4">You never knew how much fun this way eh?</div>
+    </div>
+
+    <h2> I mean you can make some pretty trippy stuff..</h2>
+    <div id = "div3">
+        <div id = "div4">Way
+            <div id = "div5">More trippy!</div>
+        </div>
+    </div>
+</body>
+</html>
