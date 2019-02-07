@@ -31,7 +31,55 @@
     <br><br />
     <h3>This is my favorite picture, I got married last July and it was the best day ever! I love my wife </h3>
     <img src="B+D wedding day-45.jpg" alt="My Wife and I" height="300" width="200">
-    
+    <br><br />
+
+	<h2>This is what a canvas is, it is a rectangular area on an HTML page, you use JavaScript to draw graphics!</h2>
+    <canvas id="myCircle" width="200" height="100" style="border:1px solid blue;"></canvas>
+        <script>
+        var c = document.getElementById("myCircle");
+        var ctx = c.getContext("2d");
+        ctx.beginPath();
+        ctx.arc(95,50,40,0,2*Math.PI);
+        ctx.stroke();
+        </script> 
+
+    <canvas id="linear" width="200" height="100" style="border:1px solid #d3d3d3;"></canvas>
+        <script>
+        var c = document.getElementById("linear");
+        var ctx = c.getContext("2d");
+        // Create gradient
+        var grd = ctx.createLinearGradient(0,0,200,0);
+        grd.addColorStop(0,"green");
+        grd.addColorStop(1,"blue");
+        // Fill with gradient
+        ctx.fillStyle = grd;
+        ctx.fillRect(10,10,150,80);
+        </script>
+
+    <canvas id="circle" width="200" height="100" style="border:1px solid #d3d3d3;"></canvas>
+        <script>
+        var c = document.getElementById("circle");
+        var ctx = c.getContext("2d");
+        
+        // Create gradient
+        var grd = ctx.createRadialGradient(75,50,5,90,60,100);
+        grd.addColorStop(0,"yellow");
+        grd.addColorStop(1,"blue");
+        
+        // Fill with gradient
+        ctx.fillStyle = grd;
+        ctx.fillRect(10,10,150,80);
+        </script>
+		
+	<canvas id="helloWorld" width="270" height="100" style="border:3px solid #4e4faf;"></canvas>
+        <script>
+        var c = document.getElementById("helloWorld");
+        var ctx = c.getContext("2d");
+        ctx.font = "40px Impact";
+        ctx.strokeText("Isn't this cool?",10,80);
+        ctx.strokeText()
+        </script>
+		
     <h2>I could put so many things in my website, and I love the fact that I am able to put things that are meaningful to me!
         I hope you see the importance of media on a website! It add's a fun aspect to everything!
     </h2>
