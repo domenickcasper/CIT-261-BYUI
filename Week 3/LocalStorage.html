@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Local Storage</title>
+</head>
+<body>
+    <h1>Did you know that HTML has Local Storage built in? You can store all sorts of data! How many times can you click this button??</h1>
+
+    <script>
+        function Count() {
+            if(typeof(Storage) !== "undefined") {
+                if (localStorage.clickcount) {
+                  localStorage.clickcount = Number(localStorage.clickcount)+1;
+                } else {
+                  localStorage.clickcount = 1;
+                }
+                document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+            } else {
+                document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+            }
+        }
+    </script>
+
+    <h2><button onclick = "Count()" type = "button">Click me, I dare you!</button></h2>
+    <h1 id="result"></h1>
+    <h2>Even if you close the browser and come back in, the number is not reset!</h2>
+    
+    <script>
+        function Clear() {
+            localStorage.clear()
+        }
+    </script>
+
+    <h2><button onclick = "Clear()" type="button">Reset</button></h2>
+    <h1>Now click the button up above and you no longer have any clicks, all that hard work down the drain!</h1>
+    <h1>This is a great way to pass the time, take out your anger on the mouse! Let all the frustration leave your body!</h1>
+    <br><br>
+    <h2>As you can see, there are some advantages to storing data directly on your computer instead of a server,
+        it's not something you need to use, but it is something that is incredibly fun to use.</h2>
+
+</body>
+</html>
