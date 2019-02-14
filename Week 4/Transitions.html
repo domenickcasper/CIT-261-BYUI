@@ -73,6 +73,19 @@
             transform: rotateY(60deg);
         }
 
+        #animation {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background-color: green;
+        }
+
+        #box {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            background: blueviolet;
+        }
     </style>
 </head>
 <body>
@@ -94,5 +107,30 @@
             <div id = "div5">More trippy!</div>
         </div>
     </div>
+
+    <h2>This is what an annimation looks like in JavaScript</h2>
+    <p><button onclick="myMove()">Click Me, I dare you!</button></p> 
+    <div id ="box">
+        <div id ="animation"></div>
+    </div>
+
+    <script>
+            function myMove() {
+              var elem = document.getElementById("animation");   
+              var pos = 0;
+              var id = setInterval(frame, 10);
+              function frame() {
+                if (pos == 200) {
+                  clearInterval(id);
+                } else {
+                  pos++; 
+                  elem.style.top = pos + "px"; 
+                  elem.style.left = pos + "px"; 
+                }
+              }
+            }
+
+        
+    </script>
 </body>
 </html>

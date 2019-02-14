@@ -5,28 +5,32 @@
 </head>
 <body>
 <h1> JavaScript Objects! </h1> <br />
-<h2> Can you guess the color of the car? Select from the dropdown menu </h2> <br />
+<h2>JavaScript objects are awesome, they are a collection of named values</h2>
 
-<h3 id = "carfun"></h3>
-<select id = "selected">
-    <option value = "Honda">Honda</option>
-    <option value = "Toyota">Toyota</option>
-    <option value = "Ford">Ford</option>
-    <option value = "Subaru">Subaru</option>
-    <option value = "Dodge">Dodge</option>
-</select>
+<h3>This is everything about me!</h3>
+<h4 id = "domenick"></h4>
+<h4 id = "age"></h4>
+<h4 id = "height"></h4>
+<h4 id = "eyeColor"></h4>
+<h4 id = "hairColor"></h4>
 
-<p>Click this button to see your selected car in full glory</p>
-
-<button onclick = "getCar()">Click me!</button>
-
-<h1 id = "funn" style = "font-size: 100px"></h1>
+<h2>Every word that is capitalized is in a JavaScript Object!! Isn't that way cool?!</h2>
 
 <script>
-function getCar() {
-    var car = document.getElementById("carfun");
-    document.getElementById("carfun").innerHTML = car;
-}
+var me = {
+    firstName : "Domenick",
+    lastName : "Casper",
+    age : 23,
+    height : "Six Feet Two Inches",
+    eyeColor : "Blue",
+    hairColor : "Brown"
+};
+document.getElementById("domenick").innerHTML = me.firstName + " " + me.lastName;
+document.getElementById("age").innerHTML = "He is " + me.age + " years old";
+document.getElementById("height").innerHTML = "He is " + me.height + " tall";
+document.getElementById("eyeColor").innerHTML = "His eyes are a beautiful shade of " + me.eyeColor;
+document.getElementById("hairColor").innerHTML = "He has dark, luscious " + me.hairColor + " hair";
+
 
 </script>
 </body>
