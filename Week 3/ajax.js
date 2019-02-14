@@ -36,3 +36,9 @@ function getCities()
     xhrCountry.open("GET", theCity, true);
     xhrCountry.send(null);
 }
+
+function clearFile() {
+    do {
+        document.getElementById("tablesOfStudents").deleteRow(1);
+    } while (document.getElementById("tablesOfStudents").rows.length > 0);
+}
