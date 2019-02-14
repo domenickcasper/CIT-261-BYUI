@@ -36,10 +36,3 @@ function getCities()
     xhrCountry.open("GET", theCity, true);
     xhrCountry.send(null);
 }
-
-function clearCities()
-{
-    do {
-        document.getElementById("cityOfTables").deleteRow(1);
-    } while (document.getElementById("cityOfTables").rows.length > 0);
-}
