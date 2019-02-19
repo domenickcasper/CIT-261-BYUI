@@ -13,8 +13,11 @@
 <h4 id = "height"></h4>
 <h4 id = "eyeColor"></h4>
 <h4 id = "hairColor"></h4>
-
 <h2>Every word that is capitalized is in a JavaScript Object!! Isn't that way cool?!</h2>
+<h4 id = "meAgain"></h4>
+<h2>This one uses a for...in loop to access all the elements of me! Even the function inside!!!</h2>
+<h2>I can create a function called fullName to get the do the work for me!</h2>
+<h4 id = "nameFull"></h4>
 
 <script>
 var me = {
@@ -23,15 +26,86 @@ var me = {
     age : 23,
     height : "Six Feet Two Inches",
     eyeColor : "Blue",
-    hairColor : "Brown"
+    hairColor : "Brown",
+    fullName : function() {
+        return this.firstName + " " + this.lastName;
+    }
 };
 document.getElementById("domenick").innerHTML = me.firstName + " " + me.lastName;
 document.getElementById("age").innerHTML = "He is " + me.age + " years old";
 document.getElementById("height").innerHTML = "He is " + me.height + " tall";
 document.getElementById("eyeColor").innerHTML = "His eyes are a beautiful shade of " + me.eyeColor;
 document.getElementById("hairColor").innerHTML = "He has dark, luscious " + me.hairColor + " hair";
+document.getElementById("nameFull").innerHTML = me.fullName();
 
+var txt = "";
+var x;
+for (x in me) {
+    txt += me[x] + " ";
+}
+document.getElementById("meAgain").innerHTML = txt;
+</script>
+
+
+
+<h2>This is using a new Object in JavaScript!</h2>
+<h3 id = "javascript"></h3><br />
+<h3 id = "property"></h3><br />
+
+<script>
+    var person = new Object();
+    person.firstName = "Domenick";
+    person.lastName = "Casper";
+    person.age = "23";
+    person.height = "Six Feet Two Inches";
+    person.eyeColor = "Blue";
+    person.hairColor = "Brown";
+
+    document.getElementById("javascript").innerHTML = person.firstName + " " + person.lastName 
+    + " is " + person.age + " years young, and is " + person.height + " tall " 
+    + " and he has " + person.eyeColor + " eyes and lastly his hair is a beautiful shade of " 
+    + person.hairColor;
+
+    document.getElementById("property").innerHTML = person["firstName"] + " " + person["lastName"] 
+    + " is " + person["age"] + " years young, and is " + person["height"] + " tall " 
+    + " and he has " + person["eyeColor"] + " eyes and lastly his hair is a beautiful shade of " 
+    + person["hairColor"];
 
 </script>
+
+<h2>The first of the two examples above is accessed by the whatever.whatever method. And the second is 
+    accessed by the whatever["whatever"] method. I could also delete whatever was in a specific element
+    but I don't think I need to show you that.
+</h2><br />
+
+<h3 id = "hello"></h3>
+<h3 id = "Hello"></h3>
+<h2>This text was manipulated using methods to uppercase and to lowercase(I used the HELLO WORLD text and turned it lower case.)</h2><br>
+
+<script>
+    var message = "hello world";
+    var x = message.toUpperCase();
+
+    document.getElementById("hello").innerHTML = x;
+    
+    var y = x.toLowerCase();
+    document.getElementById("Hello").innerHTML = y;
+</script>
+
+<h3>Click the "Try it" button to create a BUTTON element with a "Click me" text.</h3>
+<h3>How many buttons does it take to get to the center of a tootsie pop?</h3>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+  var x = document.createElement("BUTTON");
+  var t = document.createTextNode("Click me");
+  x.appendChild(t);
+  document.body.appendChild(x);
+}
+</script>
+
+
 </body>
 </html>
