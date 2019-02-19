@@ -17,7 +17,7 @@
             width: 200px;
             height: 200px;
             background: coral;
-            transition: width 2s, height 4s;
+            transition: width 4s, height 4s;
         }
         
         #div1:hover {
@@ -76,32 +76,31 @@
         #animation {
             width: 100px;
             height: 100px;
-            position: absolute;
-            background-color: green;
+            position: relative;
+            background-color: burlywood;
+
         }
 
         #box {
             width: 300px;
             height: 300px;
             position: relative;
-            background: blueviolet;
+            background: grey;
         }
     </style>
 </head>
 <body>
     <h1>CSS3 Transitions, Animations, and Transformations!</h1>
-    <h2>This is what a CSS3 Transition looks like!</h2>
+    <h2>This is what a CSS3 Transition looks like! Click the button after you hover over the orange box, then see the changes</h2>
+    <button onclick="myHover()">Try this</button>
     <div id = "div1"></div>
 
     <h2>Do you like color as much as I do? This is a Animation!</h2>
     <div id = "div2"></div>
 
-    <h2>So now you can see the fun in these! Now look at what Transform can do!</h2>
-    <div id = "div3">
-        <div id = "div4">You never knew how much fun this way eh?</div>
-    </div>
 
-    <h2> I mean you can make some pretty trippy stuff..</h2>
+    <h2> Transform can do some pretty awesome stuff, especially when you click this button!</h2>
+    <button onclick = "myTransformAgain()">Trippy Button</button>
     <div id = "div3">
         <div id = "div4">Way
             <div id = "div5">More trippy!</div>
@@ -115,22 +114,30 @@
     </div>
 
     <script>
-            function myMove() {
-              var elem = document.getElementById("animation");   
-              var pos = 0;
-              var id = setInterval(frame, 10);
-              function frame() {
-                if (pos == 200) {
-                  clearInterval(id);
-                } else {
-                  pos++; 
-                  elem.style.top = pos + "px"; 
-                  elem.style.left = pos + "px"; 
-                }
-              }
+        function myMove() {
+            var elem = document.getElementById("animation");   
+            var pos = 0;
+            var id = setInterval(frame, 10);
+            function frame() {
+            if (pos == 200) {
+                clearInterval(id);
+            } else {
+                pos++; 
+                elem.style.top = pos + "px"; 
+                elem.style.left = pos + "px"; 
             }
+        }
+    }
 
-        
+    function myHover() {
+        document.getElementById("div1").style.transition = "all 1s";
+    }            
+
+    function myTransformAgain() {
+        document.getElementById("div3").style.transform = "scale(2, 2)";
+        document.getElementById("div4").style.transform = "scaleX(1)";
+        document.getElementById("div5").style.transform = "rotate(250deg)";
+    }
     </script>
 </body>
 </html>
