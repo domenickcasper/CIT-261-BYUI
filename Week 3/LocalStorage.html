@@ -36,8 +36,71 @@
     <h1>This is a great way to pass the time, take out your anger on the mouse! Let all the frustration leave your body!</h1>
     <br><br>
 
-    <script>
-		localStorage.setItem('colorSetting', 'blue');
+    <select id = "cars">
+        <option value = "Honda">Honda</option>
+        <option value = "Toyota">Toyota</option>
+        <option value = "Subaru">Subaru</option>
+        <option value = "Dodge">Dodge</option>
+        <option value = "Chevrolet">Chevrolet</option>
+        <option value = "Ford">Ford</option>
+        <option value = "Audi">Audi</option>
+        <option value = "BMW">BMW</option>
+        <option value = "Chrystler">Chrystler</option>
+        <option value = "Kia">Kia</option>
+    </select>
+
+<h2>Select your car make! Then click the button to retrieve it from Local Storage!</h2>
+<button onclick="myFunction()">Click me!</button>
+<h1 id="result1"></h1>
+<button onclick="functionRetrieve()">Retrieve</button>
+<h1 id = "retrieve"></h1>
+
+<h2>Put your make into the box below! Then grab it from Local Storage!</h2>
+<input type = "text" id = "model">
+<button onclick = "getInput()">Save it!</button>
+<h1 id = "result2"></h1>
+<button onclick="retrieveInput()">Get me!</button>
+<h1 id = "retrieve2"></h1>
+
+<h2>Click the button below, you get the chance to put 5 of whatever you desire into local storage!</h2>
+
+<button onclick="parseData()">Click me!</button>
+<h1 id = "result3"></h1>
+<button onclick="retrieveData()">Retrieve</button>
+
+<script>
+    function myFunction() {
+      
+      document.getElementById("result1").innerHTML = document.getElementById("cars").value;
+      localStorage.setItem("localCars", document.getElementById("cars").value);
+    }
+
+    function functionRetrieve() {
+        document.getElementById("retrieve").innerHTML = localStorage.getItem("localCars");
+    }
+
+    function getInput() {
+        document.getElementById("result2").innerHTML = document.getElementById("model").value;
+        localStorage.setItem("localmodel", document.getElementById("model").value);
+    }
+
+    function retrieveInput() {
+        document.getElementById("retrieve2").innerHTML = localStorage.getItem("localmodel");
+    }
+
+    function parseData() {
+        var names = [];
+        for (i = 0; i < 5; i++) {
+            names[i] = prompt("New family name?");
+            localStorage.setItem("names", JSON.stringify(names));
+        }
+
+        // var storedNames = JSON.parse(localStorage.getItem("names"));
+    }
+
+    function retrieveData() {
+        document.getElementById("result3").innerHTML = JSON.parse(localStorage.getItem("names"));
+    }
     </script>
 
     <h2>As you can see, there are some advantages to storing data directly on your computer instead of a server,
