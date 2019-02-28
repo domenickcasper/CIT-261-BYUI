@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animation</title>
+    <style>
+         #box {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            background: grey;
+        }
+
+        #animation {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            background-color: burlywood;
+        }
+
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background: aquamarine;
+            position: relative;
+            animation: moving 2s infinite;
+        }
+
+        @keyframes moving {
+            from {left: 0px;}
+            to {left: 500px;}
+        }
+
+        #div2 {
+            width: 200px;
+            height: 200px;
+            background: tomato;
+            position: relative;
+            animation: moving1 2s;
+            animation-fill-mode: both;
+        }
+
+        @keyframes moving1 {
+            from {top: 0px;}
+            to {top: 50px; background-color: violet;}
+        }
+
+        
+        #div3 {
+            width: 200px;
+            height: 200px;
+            background: darkblue;
+            position: relative;
+            animation: moving2 2s infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes moving2 {
+            from {left: 0px;}
+            to {left: 500px;}
+        }
+
+        #div4 {
+            width: 200px;
+            height: 200px;
+            background: red;
+            position: relative;
+            animation: moving3 5s linear 2s infinite alternate;
+        }
+
+        @keyframes moving3 {
+            0%   {background: red; left: 0px; top: 0px;}
+            25%  {background: yellow; left: 100px; top: 0px;}
+            50%  {background: blue; left: 100px; top: 100px;}
+            75%  {background: green; left: 0px; top: 100px;}
+            100% {background: red; left: 0px; top: 0px;}
+        }
+
+        #slidein {
+            animation-duration: 3s;
+            animation-name: slidein;
+        }
+
+        @keyframes slidein {
+            from {
+                margin-left: 100%;
+                width: 300%;
+            }
+            75% {
+                font-size: 300%;
+                margin-left: 15%;
+                width: 150%;
+            }
+
+            to {
+                margin-left: 0%;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>This is what an annimation looks like in JavaScript</h1>
+    <p><button onclick="myMove()">Click Me, I dare you!</button></p> 
+    <div id ="box">
+        <div id ="animation"></div>
+    </div>
+
+    <h1>This is animation only using CSS, no JavaScript!</h1>
+    <h2>This will continue on INDEFINITELY!!! For 2 Seconds... then loop back to beginning.</h2>
+    <div id = "div1"></div>
+
+    <h2>I found this animation really cool as well.</h2>
+    <div id = "div2"></div><br /><br />
+
+    <h2>This is the animation-timing property. It is going the same speed the entire time, unlike the first one!</h2>
+    <div id = "div3"></div>
+
+    <h2>This will go forward then backwards</h2>
+    <div id = "div4"></div><br /><br /><br /><br />
+
+    <h1 id = "slidein" >Okay, so I hope you see how cool it is to use Animation, I really enjoy it! I have had so much fun being able
+        to get this working and understanding how to use CSS beter, and the cool effects it can have!
+    </h1>
+
+<script>
+    function myMove() {
+        var elem = document.getElementById("animation");   
+        var pos = 0;
+        var id = setInterval(frame, 10);
+        function frame() {
+        if (pos == 200) {
+            clearInterval(id);
+        } else {
+            pos++; 
+            elem.style.top = pos + "px"; 
+            elem.style.left = pos + "px"; 
+        }
+    }
+}
+</script>
+
+</body>
+</html>
