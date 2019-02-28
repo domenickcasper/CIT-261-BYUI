@@ -1,9 +1,69 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Transformations</title>
-    </head>
-<body>
+<head>
+<title>Transformations</title>
+<style>
+    #div1 {
+        width: 200px;
+        height: 100px;
+        background-color: blueviolet;
+        transform: rotate(200deg)
+    }
 
+    #div2 {
+        width: 200px;
+        height: 100px;
+        background-color: salmon;
+        transform: skewY(10deg)
+    }
+
+    #div3 {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+        transform: scaleX(-2.2)
+    }
+
+    #div4 {
+        width: 200px;
+        height: 100px;
+        background-color: fuchsia;
+        transform: skew(20deg, -10deg)
+    }
+
+    #div5 {
+        width: 200px;
+        height: 100px;
+        background-color: hotpink;
+        transform: translate3d(300px, -200px, 200px)
+    }
+
+    #div6 {
+        width: 200px;
+        height: 100px;
+        background-color: khaki;
+        transform: matrix(0.5, 0.9, -0.9, 0.5, 40, 50)
+    }
+</style>
+</head>
+<body>
+    <h1>These are some sweet transformations!</h1>
+    <h2>This one will rotate 200 degrees.</h2>
+    <div id = "div1">What's up world?</div>
+
+    <h2>This one will skew the Y 10 degrees.</h2>
+    <div id = "div2">This is weird?</div>
+
+    <h2>I will scale the X value!</h2>
+    <div id ="div3">Trippy</div>
+
+    <h2>Skewing both X and Y</h2>
+    <div id = "div4">Yeppppp</div>
+
+    <h2>This is being translated in 3d, moving it on the screen where I want! It's above to the right now.</h2>
+    <div id = "div5">Translated in 3D</div>
+
+    <h2>I am using the Matrix here to position it in a different way!</h2>
+    <div id = "div6">This is actually all fun.</div>
 </body>
 </html>
