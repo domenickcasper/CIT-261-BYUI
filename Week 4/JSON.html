@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <h1>Welcome to JSON, where you can convert JSON into a JavaScript object!</h1>
+    <h2>Here is some information about me!</h2>
+
+    <h1 id = "theName"></h1>
+    <h1 id = "age"></h1>
+    <h1 id = "city"></h1>
+    <h1 id = "hair_color"></h1>
+    <h1 id = "eye_color"></h1>
+
+    <h2>Click the button to enter five of your favorite cars!</h2>
+    <button onclick="parseIt()">Click me!</button>
+    <h1 id = "enter"></h1>
+
+    <h1>I was born on this day in 1995, I parse my name, birth and the city I was born in. This is awesome!</h1>
+    <h2 id = "birthday"></h2>
+
+    <h1>Here I am looping through the cars that are in an array! It's pretty epic!</h1>
+    <h2 id = "arrayCar"></h2>
+
+    <h1>I hope you see the benefits of JSON in coding, it does a lot!</h1>
+    <script>
+        var domJSON = '{"name":"Domenick", "age":23, "city":"Rexburg", "hair_color":"Brown", "eye_color":"Blue"}';
+        var domObject = JSON.parse(domJSON);
+        document.getElementById("theName").innerHTML = domObject.name;
+        document.getElementById("age").innerHTML = domObject.age;
+        document.getElementById("city").innerHTML = domObject.city;
+        document.getElementById("hair_color").innerHTML = domObject.hair_color;
+        document.getElementById("eye_color").innerHTML = domObject.eye_color;
+		
+        function parseIt() {
+            var cars = [];
+            for (i = 0; i < 5; i++) {
+                cars[i] = prompt("New Car Name?");
+                var carObject = JSON.stringify(cars);
+            }
+		    document.getElementById("enter").innerHTML = JSON.parse(carObject);
+        }
+
+        var text = '{"name":"Domenick", "birth":"1995-04-04", "city":"Brigham City"}';
+        var obj = JSON.parse(text);
+        obj.birth = new Date(obj.birth);
+        document.getElementById("birthday").innerHTML = obj.name + ", " + obj.birth + ", " + obj.city; 
+
+
+        var myObj, i, x = "";
+        myObj = {
+            "cars":[ "Subaru", "Honda", "Toyota", "Ford", "Dodge", "BMW", "Tesla"]
+        };
+
+        for (i in myObj.cars) {
+            x += myObj.cars[i] + "<br>";
+        }
+        document.getElementById("arrayCar").innerHTML = x;
+    </script>
+</body>
+</html>
