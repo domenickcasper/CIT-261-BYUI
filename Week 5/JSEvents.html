@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Events</title>
+    <style>
+    
+    </style>
+</head>
+<body onload="alerting()">
+    <h1>So you want to see JavaScript Events huh? You just witnessed an onload!</h1>
+    <h1>First off I want to show you an onclick example.</h1>
+    <button onclick="getDate()">What time is it?</button><br>
+    <h2 id = "date"></h2><br>
+
+    <h1>Select your favorite car from the menu! This is what onchange looks like.</h1>
+    <select id = "carSelect" onchange="selectCar()">
+        <option value = "Honda">Honda</option>
+        <option value = "Toyota">Toyota</option>
+        <option value = "Dodge">Dodge</option>
+        <option value = "Subaru">Subaru</option>
+        <option value = "Ford">Ford</option>
+        <option value = "BMW">BMW</option>
+        <option value = "Tesla">Tesla</option>
+        <option value = "Audi">Audi</option>
+        <option value = "Chevrolet">Chevrolet</option>
+    </select>
+
+    <h2 id = "cars"></h1><br>
+
+    <h1>Onkey up it will change your text to be capitalized</h1>
+    Enter whatever you'd like in lowercase: <input type = "text" id = "whatever" onkeyup="capitalize()"><br>
+
+    <h1>Simple mouseOver and mouseOut, it will change the text to blue when you mouse over, and back to black when you move off of it.</h1>
+    <h2 id = "changeText">Hover over me</h2>
+
+    <script>
+    function getDate() {
+        document.getElementById('date').innerHTML=Date();
+    }
+
+    function selectCar() {
+        var car = document.getElementById("carSelect").value;
+        document.getElementById("cars").innerHTML = "Your favorite car is: " + car;
+    }
+
+    function alerting() {
+        alert("The page is loaded");
+    }
+
+    function capitalize() {
+        var cap = document.getElementById("whatever");
+        cap.value = cap.value.toUpperCase();
+    }
+
+    document.getElementById("changeText").addEventListener("mouseover", mouseOver);
+    document.getElementById("changeText").addEventListener("mouseout", mouseOut);
+
+    function mouseOver() {
+        document.getElementById("changeText").style.color = "blue";
+    }
+
+    function mouseOut() {
+        document.getElementById("changeText").style.color = "black";
+    }
+    </script>
+</body>
+</html>
