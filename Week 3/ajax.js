@@ -36,3 +36,16 @@ function getCities()
     xhrCountry.open("GET", theCity, true);
     xhrCountry.send(null);
 }
+
+function getJsonFromServer() {
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var obj = JSON.parse(this.responseText);
+            document.getElementById("demoo").innerHTML = obj.name;
+        }
+    };
+    xmlhttp.open("GET", "domenick.txt", true);
+    xmlhttp.send();
+}
