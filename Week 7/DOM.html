@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document Object Model</title>
+    <style>
+        .demo {
+        color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id = "spot">It's going to go before this line!</h1>
+    <button onclick="createAnElement()">Click me please!</button><br><br />
+
+    <button onclick="deleteElement()">Click to delete an item off of the list, this uses removeChild.</button>
+    <button onclick="addElement()">Click to add an element, this uses appendChild.</button>
+    <button onclick="cloneElement()">Click me to add from one list to another, using cloneNode</button>
+
+    <ul id="cars"><li>Honda</li><li>Toyota</li><li>Subaru</li><li>Ford</li><li>Tesla</li><li>BMW</li><li>Dodge</li></ul>
+    <ul id="drinks"><li>Mountain Dew</li><li>Dr Pepper</li><li>Pepsi</li><li>Coke</li><li>Sprite</li><li>Lemonade</li><li>Water</li></ul>
+
+ 
+    <h1>If you hover over the checkbox it will alert you, but if you stay on the checkbox after you click enter to hide the alert you can actually click it.</h1>
+    <form>
+        <input type="checkbox" id="myCheck" onmouseover="aFunction()" onclick="alert('YOU CLICKED THE BOX! OR DID YOU?!')">
+    </form>
+
+    <br>
+    <button onclick="changeElement()">Click me to change the top H1 Tag to a different color!</button>
+
+    <h2 id = "whatyouwant">If you click the button below you can see what kind of tag this element has!</h2>
+    <button onclick = "getTagName()">Try</button>
+    <h2 id = "demo1"></h2>
+
+    <h2>The button you add will alert you via onClick in the function itself!</h2>
+    <button onclick="addButton()">Try adding a new Button!</button>
+
+    <script>
+        function createAnElement() {
+            var newH1 = document.createElement("h1");
+            var newStuff = document.createTextNode("Welcome to this assignment, where I use DOM to manipulate everything!");
+            newH1.appendChild(newStuff);
+            var whereItGoes = document.getElementById("spot");
+            document.body.insertBefore(newH1, whereItGoes);
+        }
+
+        function deleteElement() {
+            var list = document.getElementById("cars");
+            list.removeChild(list.childNodes[0]);
+        }
+
+        function addElement() {
+            var node = document.createElement("li");
+            var textStuff = document.createTextNode("Chevrolet");
+            node.appendChild(textStuff);
+
+            document.getElementById("cars").appendChild(node);
+        }
+
+        function cloneElement() {
+            var items = document.getElementById("drinks").lastChild;
+            var clone = items.cloneNode(true);
+            document.getElementById("cars").appendChild(clone);
+        }
+
+        function aFunction() {
+            document.getElementById("myCheck").click();
+        }
+
+        function addButton() {
+            var btn = document.createElement("button");
+            var x = document.createTextNode("Click me");
+            btn.setAttribute("onClick", "alert('setting the button attribute')");
+            btn.appendChild(x);
+            document.body.appendChild(btn);
+        }
+
+        function changeElement() {
+            document.getElementsByTagName("h1")[0].setAttribute("class", "demo");
+        }
+
+        function getTagName() {
+            var xyz = document.getElementById("whatyouwant").tagName;
+            document.getElementById("demo1").innerHTML = xyz;
+        }
+    </script>
+
+</body>
+</html>
