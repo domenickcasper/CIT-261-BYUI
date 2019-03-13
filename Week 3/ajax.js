@@ -43,7 +43,7 @@ function getJsonFromServer() {
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var obj = JSON.parse(this.responseText);
-            document.getElementById("demoo").innerHTML = obj.name;
+            document.getElementById("demoo").innerHTML = obj;
         }
     };
     xmlhttp.open("GET", "domenick.txt", true);
