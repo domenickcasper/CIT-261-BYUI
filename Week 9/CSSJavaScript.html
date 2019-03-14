@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS3 Using JavaScript</title>
+    <style>
+    .background1 {
+        background-color: coral;
+        }
+    </style>
+</head>
+<body>
+
+<button onclick="changeStyle()">Click me to change the style</button>
+<button onclick="changeFont()">Click me to change the font</button>
+<button onclick="changeSize()">Click me to change the size of the font</button>
+<button onclick="changeBackground()">Click me to change the background color</button>
+
+
+<div id="backgroundColor">
+    <h1 class="style">Hey, this website will show how you can use JavaScript to change the CSS. Get ready, it's going to be amazing!</h1>
+    <h1 class="style">I am using a JavaScript function to apply a border and making the color blue!</h1>
+</div>
+
+
+</body>
+<script>
+
+function changeStyle() {
+    var x = document.createElement('style');
+    x.innerHTML = "h1 {border: 2px solid black; color: blue}";
+    document.body.appendChild(x);
+}
+
+function changeFont() {
+    var x = document.createElement('style');
+    x.innerHTML = "h1 {font-family: helvetica}";
+    document.body.appendChild(x);
+}
+
+function changeSize() {
+    var x = document.createElement('style');
+    x.innerHTML = "h1 {font-size: 50px}";
+    document.body.appendChild(x);
+}
+
+function changeBackground() {
+    var x = document.querySelector("div");
+    var newColor = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+    x.style.backgroundColor = newColor;
+    // var x = document.getElementById('backgroundColor');
+    // x.classList.toggle('background1');
+}
+
+function changeColor() {
+
+    var newcolor = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+    ul.style.backgroundColor = newcolor;
+
+}
+
+</script>
+
+</html>

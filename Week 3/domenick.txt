@@ -1,4 +1,5 @@
-    "name":"Domenick",
+{
+	"name":"Domenick",
     "age":23,
     "sodas":[
         { "brand":"pepsi", "name":"Mountain Dew" },
