@@ -44,7 +44,13 @@ function getJsonFromServer() {
         if (this.readyState == 4 && this.status == 200) {
             var obj = JSON.parse(this.responseText);
             document.getElementById("demoo").innerHTML = obj.name;
-            
+            document.getElementById("demo1").innerHTML = JSON.stringify(obj.sodas);
+
+            var x;
+            for (x =0; x < obj.sodas.length; x++) {
+                document.getElementById("demo2").innerHTML += obj.sodas[x].brand + " makes " + obj.sodas[x].name + "<br>";
+                
+        }
         }
     };
     xmlhttp.open("GET", "https://domenickcasper.github.io/CIT-261-BYUI/Week%203/domenick.txt", true);

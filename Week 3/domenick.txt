@@ -2,7 +2,7 @@
 	"name":"Domenick",
     "age":23,
     "sodas":[
-        { "brand":"pepsi", "name":"Mountain Dew" },
+        { "brand":"Pepsi", "name":"Mountain Dew" },
         { "brand":"7up", "name":"Dr Pepper" },
         { "brand":"Monster", "name":"Monster Energy Drink" }
     ]
