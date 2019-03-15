@@ -3,13 +3,29 @@
 <head>
     <title>CSS3 Using JavaScript</title>
     <style>
-    .background1 {
-        background-color: coral;
+    body {
+        background-color: aqua;
+    }
+    .myClass {
+        width: 1500px;
+        height: 500px;
+        background-color:chocolate;
+        text-align: center;
+        font-size: 30px;
+        color: black;
+        margin: 10px;
+        }
+
+        .background {
+            background-color: #34519d;
         }
     </style>
 </head>
 <body>
 
+<button onclick="changeTheUglyBackground()">First click me to change the ugly background</button>
+<h1>This is my favorite color, and I love it as a background!</h1>
+<br><br />
 <button onclick="changeStyle()">Click me to change the style</button>
 <button onclick="changeFont()">Click me to change the font</button>
 <button onclick="changeSize()">Click me to change the size of the font</button>
@@ -21,19 +37,31 @@
     <h1 class="style">I am using a JavaScript function to apply a border and making the color blue!</h1>
 </div>
 
+<h2 id = "notH1">Okay that was pretty sweet, it's really fun to be able to change lots of your website using JavaScript!</h2>
+<button onclick="changeElement(id)">Click me to change the element above!</button>
+
+<div id = "fun">
+    <h3>This is another example of setting a class using JavaScript</h3>
+    <h3>I could just keep adding stuff but I am pretty sure you get the picture.</h3>
+    <h3>Should I go on?</h3>
+    <h3>I love this because if you want something to change when something happens, it's as easy as clicking a button.</h3>
+    <h3>Or even on key up!</h3>
+    <h3>I know this is ugly, but I hope to be demonstrating things that can be useful.</h3>
+</div>
+<button onclick="changeStuff()">Click me to change the above div!</button>
 
 </body>
 <script>
 
 function changeStyle() {
     var x = document.createElement('style');
-    x.innerHTML = "h1 {border: 2px solid black; color: blue}";
+    x.innerHTML = "h1 {border: 2px solid black;}";
     document.body.appendChild(x);
 }
 
 function changeFont() {
     var x = document.createElement('style');
-    x.innerHTML = "h1 {font-family: helvetica}";
+    x.innerHTML = "h1 {font-family: Courier}";
     document.body.appendChild(x);
 }
 
@@ -47,8 +75,6 @@ function changeBackground() {
     var x = document.querySelector("div");
     var newColor = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
     x.style.backgroundColor = newColor;
-    // var x = document.getElementById('backgroundColor');
-    // x.classList.toggle('background1');
 }
 
 function changeColor() {
@@ -58,6 +84,19 @@ function changeColor() {
 
 }
 
+function changeElement(id) {
+    var el = document.getElementById("notH1");
+    el.style.color = "red";
+    el.style.fontSize = "70px";
+}
+
+function changeStuff() {
+    document.getElementById("fun").className = "myClass";
+}
+
+function changeTheUglyBackground() {
+    document.body.className = "background";
+}
 </script>
 
 </html>
