@@ -1,0 +1,157 @@
+body {
+    background-color: #34519d
+}
+
+h1 {
+    font-size: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    color: bisque;
+}
+
+h2 {
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+    color: navajowhite;
+    border: 3px solid white;
+    padding: 2px;
+    margin: 2px;
+}
+
+h3 {
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
+    color: bisque;
+}
+
+.button {
+    background-color: navajowhite;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+iframe {
+    display: block;
+    margin: 0 auto;
+}
+
+.button1 {
+    background-color: white; 
+    color: #34519d; 
+    border: 3px solid white;
+  }
+  
+.button1:hover {
+    background-color: #34519d;
+    color: white;
+}
+
+#transform1 {
+    font-size: 26px;
+    transform: rotate(180deg);
+}
+
+#transform2 {
+    font-size: 26px;
+    transform: rotate(0deg);
+}
+
+#transform3 {
+    font-size: 26px;
+    transform: rotate(120deg)
+}
+
+#transition1 {
+    font-size: 26px;
+    text-align: center;
+    width: 1000px;
+    height: 100px;
+    transition: width 5s, height 4s;
+}
+#transition1:hover {
+    width: 600px;
+    height: 200px;
+}
+
+#transition2 {
+    font-size: 16px;
+    text-align: center;
+    width: 500px;
+    transition: width 2s, height 4s;
+}
+#transition2:hover {
+    width: 1000px;
+    transition: width 1s, height 2s;
+}
+
+#transition3 {
+    font-size: 50px;
+    text-align: center;
+    transition: width 1000px;
+}
+
+#transition3:hover {
+    font-size: 25px;
+    text-align: center;
+    width: 700px;
+    transition: height 2s, width 2s;
+}
+
+#animation1 {
+    animation-duration: 2s;
+    animation-name: animation1;
+}
+
+@keyframes animation1 {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+    75% {
+        font-size: 300%;
+        margin-left: 15%;
+        width: 150%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+#animation2 {
+    position: relative;
+    animation: animation2 5s infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes animation2 {
+    from {left: 0px;}
+    to {left: 950px;}
+}
+
+
+#animation3 {
+    width: 1000px;
+    height: 300px;
+    position: relative;
+    animation: animation3 5s linear 2s infinite alternate;
+}
+
+@keyframes animation3 {
+    0%   {color: bisque; left: 0px; top: 0px;}
+    25%  {color: antiquewhite; left: 100px; top: 0px;}
+    50%  {color: burlywood; left: 100px; top: 100px;}
+    75%  {color: navajowhite; left: 0px; top: 100px;}
+    100% {color: bisque; left: 0px; top: 0px;}
+}
